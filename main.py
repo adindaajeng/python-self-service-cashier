@@ -33,10 +33,32 @@ def menu():
 
                 if submenu == 1:
                     transaction.update_item_name()
-                
+                elif submenu == 2:
+                    transaction.update_item_qty()
+                elif submenu == 3:
+                    transaction.update_item_price()
                 else:
                     raise ValueError()
 
+            elif menu == 3:
+                print("\nSubmenu hapus item: ")
+                print("1. Hapus item berdasarkan nama")
+                print("2. Hapus semua item")
+
+                submenu = int(input("Silakan pilih dari submenu di atas: "))
+
+                if submenu == 1:
+                    transaction.delete_item()()
+                elif submenu == 2:
+                    transaction.reset_transaction()
+                else:
+                    raise ValueError()
+
+            elif menu == 4:
+                transaction.check_order()
+
+            elif menu == 5:
+                transaction.calculate_sum()
             
             else:
                 raise ValueError()
